@@ -11,7 +11,8 @@ export default function Home(props) {
   const [modalVisible, setModalVisible] = useState(false)
 
   useEffect(() => {
-    const getLocalSchedules = localStorage.getItem('schedules')
+    const token = localStorage.getItem('token')
+    const getLocalSchedules = localStorage.getItem(`${token}schedules`)
 
     if (getLocalSchedules) {
       setData(JSON.parse(getLocalSchedules))
@@ -28,7 +29,8 @@ export default function Home(props) {
   }, [])
 
   const addLocalList = (list) => {
-    localStorage.setItem('schedules', JSON.stringify(list))
+    const token = localStorage.getItem('token')
+    localStorage.setItem(`${token}schedules`, JSON.stringify(list))
   }
 
   const ToggleModal = () => {
