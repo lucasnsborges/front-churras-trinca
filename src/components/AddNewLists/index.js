@@ -25,6 +25,12 @@ export default function AddNewLists(props) {
     const response = await create(body)
 
     if (response.id) {
+      resetForm({
+        description: '',
+        suggestedAmount: '',
+        date: moment().format('YYYY-MM-DD').toString()
+      })
+      setLoading(false)
       props.handleAddList(response)
       props.handleClose()
     }
