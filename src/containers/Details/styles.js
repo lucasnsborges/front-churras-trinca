@@ -108,6 +108,17 @@ export const Balance = styled.span`
   text-decoration: ${props => props.line ? 'line-through' : 'none'};
 `
 
+export const TotalBalance = styled.span`
+  display: flex;
+  min-width: 92px;
+  align-items: center;
+  justify-content: flex-end;
+
+  @media screen and (max-width: 875px) {
+    font-size: 12px;
+  }
+`
+
 export const RemoveGuest = styled(FaTimes)`
   width: 16px;
   height: 16px;

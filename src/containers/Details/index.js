@@ -31,7 +31,8 @@ import {
   UpdateAmountInput,
   UpdateAmountButton,
   Label,
-  GoBack
+  GoBack,
+  TotalBalance,
 } from './styles'
 
 import { balanceFormat } from '../../utils'
@@ -169,10 +170,10 @@ export default function Details(props) {
             <Description>
               {data.description}
             </Description>
-            <Row>
+            <TotalBalance>
               <CoinIcon />
               {balanceFormat(total)}
-            </Row>
+            </TotalBalance>
           </Row>
         </Header>
 
